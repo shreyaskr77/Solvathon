@@ -292,7 +292,7 @@ const HODDashboard = () => {
       case 'Approved': return 'bg-green-100 text-green-800';
       case 'Rejected': return 'bg-red-100 text-red-800';
       case 'Pending': return 'bg-yellow-100 text-yellow-800';
-      default: return 'bg-gray-100 text-gray-800';
+      default: return 'bg-gray-100  text-gray-800 ';
     }
   };
 
@@ -306,7 +306,7 @@ const HODDashboard = () => {
   return (
     <div className="min-h-screen bg-apple-bg">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200 p-8">
+      <div className="bg-white  border-b border-gray-200  p-8">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl font-bold mb-2 text-apple-text">HOD Dashboard</h1>
           <p className="text-apple-gray">Manage resources, review uploads, and oversee department activities</p>
@@ -316,7 +316,7 @@ const HODDashboard = () => {
       {/* Navigation Tabs */}
       <div className="sticky top-16 z-40 py-6 bg-apple-bg/80 backdrop-blur-md">
         <div className="flex justify-center w-full px-4">
-          <div className="inline-flex gap-2 p-2 bg-white/60 border border-gray-200/50 rounded-full shadow-apple-md backdrop-blur-xl overflow-x-auto max-w-full hide-scrollbar">
+          <div className="inline-flex gap-2 p-2 bg-white/60  border border-gray-200/50  rounded-full shadow-apple-md backdrop-blur-xl overflow-x-auto max-w-full hide-scrollbar">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.id;
@@ -327,7 +327,7 @@ const HODDashboard = () => {
                   className={`
                     relative flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap
                     ${isActive
-                      ? 'text-system-blue bg-white shadow-apple-sm scale-105'
+                      ? 'text-system-blue bg-white  shadow-apple-sm scale-105'
                       : 'text-apple-gray hover:text-apple-text hover:bg-black/5'}
                   `}
                 >
@@ -373,12 +373,12 @@ const HODDashboard = () => {
                 </h3>
                 <div className="space-y-3 max-h-96 overflow-y-auto">
                   {studentFiles.filter(f => f.fileType === 'Notes').slice(0, 6).map(note => (
-                    <div key={note._id} className="p-4 border border-slate-100 rounded-lg hover:bg-slate-50 transition">
+                    <div key={note._id} className="p-4 border border-slate-100  rounded-lg hover:bg-slate-50  transition">
                       <div className="flex items-start justify-between">
                         <div className="flex-1">
-                          <h4 className="font-semibold text-slate-800">{note.title}</h4>
-                          <p className="text-sm text-slate-600 mt-1">{note.description}</p>
-                          <div className="flex items-center gap-4 mt-2 text-xs text-slate-500">
+                          <h4 className="font-semibold text-slate-800 ">{note.title}</h4>
+                          <p className="text-sm text-slate-600  mt-1">{note.description}</p>
+                          <div className="flex items-center gap-4 mt-2 text-xs text-slate-500 ">
                             <span>👤 {note.uploadedBy?.userName || 'Unknown'}</span>
                             <span>📅 {formatDate(note.createdAt)}</span>
                             <span className={`px-2 py-1 rounded font-medium ${getStatusColor(note.status)}`}>{note.status}</span>
@@ -388,7 +388,7 @@ const HODDashboard = () => {
                     </div>
                   ))}
                   {studentFiles.filter(f => f.fileType === 'Notes').length === 0 && (
-                    <p className="text-center text-slate-500 py-6">No notes uploaded yet</p>
+                    <p className="text-center text-slate-500  py-6">No notes uploaded yet</p>
                   )}
                 </div>
               </div>
@@ -396,35 +396,35 @@ const HODDashboard = () => {
               {/* Events & Notices */}
               <div className="space-y-6">
                 {/* Upcoming Events */}
-                <div className="bg-white rounded-xl shadow-md border border-slate-200 p-6">
-                  <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                <div className="bg-white  rounded-xl shadow-md border border-slate-200  p-6">
+                  <h3 className="text-lg font-bold text-slate-800  mb-4 flex items-center gap-2">
                     <CalendarIcon className="w-5 h-5 text-indigo-600" />
                     Upcoming Events
                   </h3>
                   <div className="space-y-3">
                     {events.length > 0 ? events.slice(0, 3).map(ev => (
-                      <div key={ev._id} className="p-3 border border-slate-100 rounded-lg hover:bg-slate-50">
-                        <p className="font-semibold text-slate-800 text-sm">{ev.title}</p>
-                        <p className="text-xs text-slate-600 mt-1">{formatDate(ev.date)}</p>
-                        <p className="text-xs text-slate-500">{ev.location}</p>
+                      <div key={ev._id} className="p-3 border border-slate-100  rounded-lg hover:bg-slate-50 ">
+                        <p className="font-semibold text-slate-800  text-sm">{ev.title}</p>
+                        <p className="text-xs text-slate-600  mt-1">{formatDate(ev.date)}</p>
+                        <p className="text-xs text-slate-500 ">{ev.location}</p>
                       </div>
-                    )) : <p className="text-sm text-slate-500">No upcoming events</p>}
+                    )) : <p className="text-sm text-slate-500 ">No upcoming events</p>}
                   </div>
                 </div>
 
                 {/* Recent Notices */}
-                <div className="bg-white rounded-xl shadow-md border border-slate-200 p-6">
-                  <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                <div className="bg-white  rounded-xl shadow-md border border-slate-200  p-6">
+                  <h3 className="text-lg font-bold text-slate-800  mb-4 flex items-center gap-2">
                     <DocumentPlusIcon className="w-5 h-5 text-indigo-600" />
                     Recent Notices
                   </h3>
                   <div className="space-y-3">
                     {notices.length > 0 ? notices.slice(0, 3).map(n => (
-                      <div key={n._id} className="p-3 border border-slate-100 rounded-lg hover:bg-slate-50">
-                        <p className="font-semibold text-slate-800 text-sm">{n.title}</p>
-                        <p className="text-xs text-slate-600 mt-1">{formatDate(n.createdAt)}</p>
+                      <div key={n._id} className="p-3 border border-slate-100  rounded-lg hover:bg-slate-50 ">
+                        <p className="font-semibold text-slate-800  text-sm">{n.title}</p>
+                        <p className="text-xs text-slate-600  mt-1">{formatDate(n.createdAt)}</p>
                       </div>
-                    )) : <p className="text-sm text-slate-500">No notices yet</p>}
+                    )) : <p className="text-sm text-slate-500 ">No notices yet</p>}
                   </div>
                 </div>
               </div>
@@ -456,7 +456,7 @@ const HODDashboard = () => {
                       onChange={(e) => setEventTitle(e.target.value)}
                       required
                       placeholder="e.g., Midterm Exams"
-                      className="w-full p-3 border border-gray-200 rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none transition"
+                      className="w-full p-3 border border-gray-200  rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none transition"
                     />
                   </div>
                   <div>
@@ -466,7 +466,7 @@ const HODDashboard = () => {
                       onChange={(e) => setEventDescription(e.target.value)}
                       placeholder="Describe the event..."
                       rows="3"
-                      className="w-full p-3 border border-gray-200 rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none transition"
+                      className="w-full p-3 border border-gray-200  rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none transition"
                     />
                   </div>
                   <div>
@@ -476,7 +476,7 @@ const HODDashboard = () => {
                       value={eventDate}
                       onChange={(e) => setEventDate(e.target.value)}
                       required
-                      className="w-full p-3 border border-gray-200 rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none transition"
+                      className="w-full p-3 border border-gray-200  rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none transition"
                     />
                   </div>
                   <div>
@@ -486,7 +486,7 @@ const HODDashboard = () => {
                       value={eventLocation}
                       onChange={(e) => setEventLocation(e.target.value)}
                       placeholder="e.g., Main Campus, Auditorium"
-                      className="w-full p-3 border border-gray-200 rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none transition"
+                      className="w-full p-3 border border-gray-200  rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none transition"
                     />
                   </div>
                   <button
@@ -516,7 +516,7 @@ const HODDashboard = () => {
                       onChange={(e) => setNoticeTitle(e.target.value)}
                       required
                       placeholder="e.g., Important Notice"
-                      className="w-full p-3 border border-gray-200 rounded-apple-lg focus:ring-2 focus:ring-green-500 outline-none transition"
+                      className="w-full p-3 border border-gray-200  rounded-apple-lg focus:ring-2 focus:ring-green-500 outline-none transition"
                     />
                   </div>
                   <div>
@@ -527,7 +527,7 @@ const HODDashboard = () => {
                       required
                       placeholder="Notice content..."
                       rows="3"
-                      className="w-full p-3 border border-gray-200 rounded-apple-lg focus:ring-2 focus:ring-green-500 outline-none transition"
+                      className="w-full p-3 border border-gray-200  rounded-apple-lg focus:ring-2 focus:ring-green-500 outline-none transition"
                     />
                   </div>
                   <div>
@@ -537,7 +537,7 @@ const HODDashboard = () => {
                       onChange={handleFileChange}
                       multiple
                       accept=".pdf,.doc,.docx,.xls,.xlsx,.txt,.jpg,.png"
-                      className="w-full p-3 border border-gray-200 rounded-apple-lg focus:ring-2 focus:ring-green-500 outline-none transition"
+                      className="w-full p-3 border border-gray-200  rounded-apple-lg focus:ring-2 focus:ring-green-500 outline-none transition"
                     />
                     {attachments.length > 0 && (
                       <p className="text-sm text-green-600 mt-2">✓ {attachments.length} file(s) selected</p>
@@ -571,7 +571,7 @@ const HODDashboard = () => {
                       onChange={(e) => setNoteTitle(e.target.value)}
                       required
                       placeholder="e.g., Unit 1 - Introduction"
-                      className="w-full p-3 border border-gray-200 rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none transition"
+                      className="w-full p-3 border border-gray-200  rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none transition"
                     />
                   </div>
                   <div>
@@ -581,7 +581,7 @@ const HODDashboard = () => {
                       onChange={(e) => setNoteDescription(e.target.value)}
                       placeholder="Brief description of the notes..."
                       rows="3"
-                      className="w-full p-3 border border-gray-200 rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none transition"
+                      className="w-full p-3 border border-gray-200  rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none transition"
                     />
                   </div>
                   <div>
@@ -590,7 +590,7 @@ const HODDashboard = () => {
                       value={noteSubject}
                       onChange={(e) => setNoteSubject(e.target.value)}
                       required
-                      className="w-full p-3 border border-gray-200 rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none transition"
+                      className="w-full p-3 border border-gray-200  rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none transition"
                     >
                       <option value="">Select a subject</option>
                       {subjects.map(subj => (
@@ -603,7 +603,7 @@ const HODDashboard = () => {
                     <select
                       value={noteFileType}
                       onChange={(e) => setNoteFileType(e.target.value)}
-                      className="w-full p-3 border border-gray-200 rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none transition"
+                      className="w-full p-3 border border-gray-200  rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none transition"
                     >
                       <option value="Notes">📚 Class Notes</option>
                       <option value="Assignment">📋 Assignment</option>
@@ -618,7 +618,7 @@ const HODDashboard = () => {
                       onChange={(e) => setNoteFile(e.target.files[0])}
                       required
                       accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.jpg,.png"
-                      className="w-full p-3 border border-gray-200 rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none transition"
+                      className="w-full p-3 border border-gray-200  rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none transition"
                     />
                     {noteFile && (
                       <p className="text-sm text-system-blue mt-2">✓ {noteFile.name}</p>
@@ -653,7 +653,7 @@ const HODDashboard = () => {
                       value={searchPendingText}
                       onChange={(e) => setSearchPendingText(e.target.value)}
                       placeholder="Search by file title or student name..."
-                      className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none transition"
+                      className="w-full pl-10 pr-4 py-3 border border-slate-300  rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none transition"
                     />
                   </div>
                   <div className="px-4 py-3 bg-yellow-100 text-yellow-800 rounded-lg font-semibold whitespace-nowrap">
@@ -666,15 +666,15 @@ const HODDashboard = () => {
               <div className="space-y-4">
                 {filteredPendingFiles.length > 0 ? (
                   filteredPendingFiles.map((file) => (
-                    <div key={file._id} className="p-6 border-2 border-slate-200 rounded-lg hover:border-indigo-300 hover:shadow-md transition-all bg-white">
+                    <div key={file._id} className="p-6 border-2 border-slate-200  rounded-lg hover:border-indigo-300 hover:shadow-md transition-all bg-white ">
                       <div className="flex items-start justify-between gap-4">
                         <div className="flex-1">
-                          <h4 className="font-bold text-slate-800 text-lg">{file.title}</h4>
-                          <p className="text-slate-600 mt-2">{file.description}</p>
+                          <h4 className="font-bold text-slate-800  text-lg">{file.title}</h4>
+                          <p className="text-slate-600  mt-2">{file.description}</p>
 
                           <div className="flex flex-wrap items-center gap-4 mt-4 text-sm">
-                            <span className="text-slate-600">👤 <strong>{file.uploadedBy?.name || file.uploadedBy?.userName || 'Unknown'}</strong></span>
-                            <span className="text-slate-600">📅 {formatDate(file.createdAt)}</span>
+                            <span className="text-slate-600 ">👤 <strong>{file.uploadedBy?.name || file.uploadedBy?.userName || 'Unknown'}</strong></span>
+                            <span className="text-slate-600 ">📅 {formatDate(file.createdAt)}</span>
                             <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium">{file.fileType}</span>
                             <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full font-medium">{file.status}</span>
                           </div>
@@ -695,7 +695,7 @@ const HODDashboard = () => {
                                 placeholder="Rejection reason..."
                                 value={rejectionReason}
                                 onChange={(e) => setRejectionReason(e.target.value)}
-                                className="px-3 py-2 border border-slate-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
+                                className="px-3 py-2 border border-slate-300  rounded text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
                               />
                               <button
                                 onClick={() => rejectFile(file._id)}
@@ -706,7 +706,7 @@ const HODDashboard = () => {
                               </button>
                               <button
                                 onClick={() => { setRejectingFileId(null); setRejectionReason(''); }}
-                                className="bg-slate-300 hover:bg-slate-400 text-slate-800 px-4 py-2 rounded text-sm font-medium transition-colors"
+                                className="bg-slate-300 hover:bg-slate-400 text-slate-800  px-4 py-2 rounded text-sm font-medium transition-colors"
                               >
                                 Cancel
                               </button>
@@ -726,7 +726,7 @@ const HODDashboard = () => {
                   ))
                 ) : (
                   <div className="text-center py-12">
-                    <p className="text-slate-500 text-lg">
+                    <p className="text-slate-500  text-lg">
                       {searchPendingText ? '❌ No files match your search' : '✅ No pending files to review'}
                     </p>
                   </div>
@@ -739,9 +739,9 @@ const HODDashboard = () => {
         {/* SMART REPOSITORY TAB */}
         {activeTab === 'repository' && (
           <div>
-            <h2 className="text-2xl font-bold text-slate-800 mb-8">Smart Repository</h2>
+            <h2 className="text-2xl font-bold text-slate-800  mb-8">Smart Repository</h2>
 
-            <div className="bg-white rounded-xl shadow-md border border-slate-200 p-8">
+            <div className="bg-white  rounded-xl shadow-md border border-slate-200  p-8">
               {/* Search Bar */}
               <div className="mb-8">
                 <div className="flex items-center gap-3 mb-6">
@@ -752,26 +752,26 @@ const HODDashboard = () => {
                       value={searchText}
                       onChange={(e) => setSearchText(e.target.value)}
                       placeholder="Search by title, description, or student name..."
-                      className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none transition"
+                      className="w-full pl-10 pr-4 py-3 border border-slate-300  rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none transition"
                     />
                   </div>
                   <button
                     onClick={clearFilters}
-                    className="px-6 py-3 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-lg font-medium transition"
+                    className="px-6 py-3 bg-slate-200 hover:bg-slate-300 text-slate-800  rounded-lg font-medium transition"
                   >
                     Clear All
                   </button>
                 </div>
 
                 {/* Filters */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-6 bg-slate-50 rounded-lg border border-slate-200">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-6 bg-slate-50  rounded-lg border border-slate-200 ">
                   <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">File Type</label>
+                    <label className="block text-sm font-semibold text-slate-700  mb-2">File Type</label>
                     <select
                       name="fileType"
                       value={filters.fileType}
                       onChange={handleFilterChange}
-                      className="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
+                      className="w-full p-3 border border-slate-300  rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                     >
                       <option value="">All Types</option>
                       <option value="Notes">Notes</option>
@@ -782,12 +782,12 @@ const HODDashboard = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">Status</label>
+                    <label className="block text-sm font-semibold text-slate-700  mb-2">Status</label>
                     <select
                       name="status"
                       value={filters.status}
                       onChange={handleFilterChange}
-                      className="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
+                      className="w-full p-3 border border-slate-300  rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                     >
                       <option value="">All Status</option>
                       <option value="Pending">Pending</option>
@@ -797,12 +797,12 @@ const HODDashboard = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">Subject</label>
+                    <label className="block text-sm font-semibold text-slate-700  mb-2">Subject</label>
                     <select
                       name="subject"
                       value={filters.subject}
                       onChange={handleFilterChange}
-                      className="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
+                      className="w-full p-3 border border-slate-300  rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                     >
                       <option value="">All Subjects</option>
                       {subjects.map(subj => (
@@ -812,8 +812,8 @@ const HODDashboard = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">Active Filters</label>
-                    <div className="p-3 bg-white border border-slate-300 rounded-lg text-sm font-medium text-slate-700">
+                    <label className="block text-sm font-semibold text-slate-700  mb-2">Active Filters</label>
+                    <div className="p-3 bg-white  border border-slate-300  rounded-lg text-sm font-medium text-slate-700 ">
                       {Object.values(filters).filter(f => f).length || 0} filter(s) applied
                     </div>
                   </div>
@@ -822,21 +822,21 @@ const HODDashboard = () => {
 
               {/* File List */}
               <div className="space-y-4">
-                <h3 className="font-semibold text-slate-800 text-lg">
+                <h3 className="font-semibold text-slate-800  text-lg">
                   {filteredFiles.length} file(s) found
                 </h3>
 
                 {filteredFiles.length > 0 ? (
                   <div className="grid grid-cols-1 gap-4 max-h-[600px] overflow-y-auto">
                     {filteredFiles.map((file) => (
-                      <div key={file._id} className="p-6 border-2 border-slate-200 rounded-lg hover:border-indigo-300 hover:shadow-lg transition-all">
+                      <div key={file._id} className="p-6 border-2 border-slate-200  rounded-lg hover:border-indigo-300 hover:shadow-lg transition-all">
                         <div className="flex items-start justify-between gap-4">
                           <div className="flex-1">
-                            <h4 className="font-bold text-slate-800 text-lg">{file.title}</h4>
-                            <p className="text-slate-600 mt-2 text-sm">{file.description}</p>
+                            <h4 className="font-bold text-slate-800  text-lg">{file.title}</h4>
+                            <p className="text-slate-600  mt-2 text-sm">{file.description}</p>
                             <div className="flex flex-wrap items-center gap-4 mt-4 text-sm">
-                              <span className="text-slate-600">📤 {file.uploadedBy?.userName}</span>
-                              <span className="text-slate-600">📅 {formatDate(file.createdAt)}</span>
+                              <span className="text-slate-600 ">📤 {file.uploadedBy?.userName}</span>
+                              <span className="text-slate-600 ">📅 {formatDate(file.createdAt)}</span>
                               <span className={`px-3 py-1 rounded-full font-medium ${getStatusColor(file.status)}`}>{file.status}</span>
                               <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">{file.fileType}</span>
                             </div>
@@ -847,14 +847,14 @@ const HODDashboard = () => {
                   </div>
                 ) : (
                   <div className="text-center py-12">
-                    <p className="text-slate-500 text-lg">
+                    <p className="text-slate-500  text-lg">
                       {searchText || Object.values(filters).some(f => f) ? '❌ No files match your search or filters' : '📭 No files in repository'}
                     </p>
                   </div>
                 )}
 
                 {filteredFiles.length > 0 && (
-                  <p className="text-sm text-slate-600 text-center mt-6">
+                  <p className="text-sm text-slate-600  text-center mt-6">
                     Showing {filteredFiles.length} of {studentFiles.length} total uploads
                   </p>
                 )}

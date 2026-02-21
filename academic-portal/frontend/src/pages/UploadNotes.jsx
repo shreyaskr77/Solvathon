@@ -17,7 +17,7 @@ const UploadNotes = () => {
         </p>
       </div>
 
-      <div className="card-apple !p-8 shadow-apple-lg border-white/50 bg-white/60 backdrop-blur-xl">
+      <div className="card-apple !p-8 shadow-apple-lg border-white/50 bg-white/60  backdrop-blur-xl">
         <form className="space-y-6">
 
           {/* Title Input */}
@@ -27,7 +27,7 @@ const UploadNotes = () => {
               <input
                 type="text"
                 placeholder="e.g., Unit 1 Notes: Data Structures"
-                className="w-full pl-4 pr-4 py-3 bg-white/50 border border-gray-200 rounded-apple-lg focus:bg-white focus:ring-2 focus:ring-system-blue focus:border-transparent outline-none transition-all"
+                className="w-full pl-4 pr-4 py-3 bg-white/50  border border-gray-200  rounded-apple-lg focus:bg-white  focus:ring-2 focus:ring-system-blue focus:border-transparent outline-none transition-all"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
               />
@@ -39,7 +39,7 @@ const UploadNotes = () => {
             <div>
               <label className="block text-sm font-semibold text-apple-text mb-2">Category</label>
               <select
-                className="w-full px-4 py-3 bg-white/50 border border-gray-200 rounded-apple-lg focus:bg-white focus:ring-2 focus:ring-system-blue outline-none transition-all appearance-none cursor-pointer"
+                className="w-full px-4 py-3 bg-white/50  border border-gray-200  rounded-apple-lg focus:bg-white  focus:ring-2 focus:ring-system-blue outline-none transition-all appearance-none cursor-pointer"
                 value={fileType}
                 onChange={(e) => setFileType(e.target.value)}
               >
@@ -50,7 +50,7 @@ const UploadNotes = () => {
             </div>
             <div>
               <label className="block text-sm font-semibold text-apple-text mb-2">Visibility</label>
-              <div className="px-4 py-3 bg-gray-50 border border-gray-200 rounded-apple-lg text-apple-gray cursor-not-allowed">
+              <div className="px-4 py-3 bg-gray-50  border border-gray-200  rounded-apple-lg text-apple-gray cursor-not-allowed">
                 Faculty Only (Auto-Approved)
               </div>
             </div>
@@ -65,7 +65,7 @@ const UploadNotes = () => {
                 className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
               />
               <div className="p-10 flex flex-col items-center justify-center text-center">
-                <div className="w-12 h-12 mb-3 rounded-full bg-white shadow-apple-sm flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 mb-3 rounded-full bg-white  shadow-apple-sm flex items-center justify-center group-hover:scale-110 transition-transform">
                   <LinkIcon className="w-6 h-6 text-system-blue" />
                 </div>
                 <h4 className="text-apple-text font-semibold mb-1">Click to browse or drag file here</h4>

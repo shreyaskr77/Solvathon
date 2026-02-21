@@ -159,7 +159,7 @@ const StudentDashboard = () => {
       case 'Approved': return 'bg-green-100 text-green-800';
       case 'Rejected': return 'bg-red-100 text-red-800';
       case 'Pending': return 'bg-yellow-100 text-yellow-800';
-      default: return 'bg-gray-100 text-gray-800';
+      default: return 'bg-gray-100  text-gray-800 ';
     }
   };
 
@@ -173,7 +173,7 @@ const StudentDashboard = () => {
   return (
     <div className="min-h-screen bg-apple-bg">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200 p-8">
+      <div className="bg-white  border-b border-gray-200  p-8">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl font-bold mb-2 text-apple-text">Student Dashboard</h1>
           <p className="text-apple-gray">Manage resources, review uploads, and oversee learning activities</p>
@@ -183,7 +183,7 @@ const StudentDashboard = () => {
       {/* Navigation Tabs */}
       <div className="sticky top-16 z-40 py-6 bg-apple-bg/80 backdrop-blur-md">
         <div className="flex justify-center w-full px-4">
-          <div className="inline-flex gap-2 p-2 bg-white/60 border border-gray-200/50 rounded-full shadow-apple-md backdrop-blur-xl overflow-x-auto max-w-full hide-scrollbar">
+          <div className="inline-flex gap-2 p-2 bg-white/60  border border-gray-200/50  rounded-full shadow-apple-md backdrop-blur-xl overflow-x-auto max-w-full hide-scrollbar">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.id;
@@ -194,7 +194,7 @@ const StudentDashboard = () => {
                   className={`
                     relative flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap
                     ${isActive
-                      ? 'text-system-blue bg-white shadow-apple-sm scale-105'
+                      ? 'text-system-blue bg-white  shadow-apple-sm scale-105'
                       : 'text-apple-gray hover:text-apple-text hover:bg-black/5'}
                   `}
                 >
@@ -239,12 +239,12 @@ const StudentDashboard = () => {
                 </h3>
                 <div className="space-y-3 max-h-96 overflow-y-auto">
                   {allNotes.slice(0, 6).map(file => (
-                    <div key={file._id} className="p-4 border border-slate-100 rounded-lg hover:bg-slate-50 transition">
+                    <div key={file._id} className="p-4 border border-slate-100  rounded-lg hover:bg-slate-50  transition">
                       <div className="flex items-start justify-between">
                         <div className="flex-1">
-                          <h4 className="font-semibold text-slate-800">{file.title}</h4>
-                          <p className="text-sm text-slate-600 mt-1">{file.description}</p>
-                          <div className="flex items-center gap-4 mt-2 text-xs text-slate-500">
+                          <h4 className="font-semibold text-slate-800 ">{file.title}</h4>
+                          <p className="text-sm text-slate-600  mt-1">{file.description}</p>
+                          <div className="flex items-center gap-4 mt-2 text-xs text-slate-500 ">
                             <span>📅 {formatDate(file.createdAt)}</span>
                             <span className={`px-2 py-1 rounded font-medium ${getStatusColor(file.status)}`}>{file.status}</span>
                           </div>
@@ -253,7 +253,7 @@ const StudentDashboard = () => {
                     </div>
                   ))}
                   {allNotes.length === 0 && (
-                    <p className="text-center text-slate-500 py-6">No uploads yet</p>
+                    <p className="text-center text-slate-500  py-6">No uploads yet</p>
                   )}
                 </div>
               </div>
@@ -268,11 +268,11 @@ const StudentDashboard = () => {
                   </h3>
                   <div className="space-y-3">
                     {events.length > 0 ? events.slice(0, 3).map(ev => (
-                      <div key={ev._id} className="p-3 border border-slate-100 rounded-lg hover:bg-slate-50">
-                        <p className="font-semibold text-slate-800 text-sm">{ev.title}</p>
-                        <p className="text-xs text-slate-600 mt-1">{formatDate(ev.date)}</p>
+                      <div key={ev._id} className="p-3 border border-slate-100  rounded-lg hover:bg-slate-50 ">
+                        <p className="font-semibold text-slate-800  text-sm">{ev.title}</p>
+                        <p className="text-xs text-slate-600  mt-1">{formatDate(ev.date)}</p>
                       </div>
-                    )) : <p className="text-sm text-slate-500">No events</p>}
+                    )) : <p className="text-sm text-slate-500 ">No events</p>}
                   </div>
                 </div>
 
@@ -284,11 +284,11 @@ const StudentDashboard = () => {
                   </h3>
                   <div className="space-y-3">
                     {notices.length > 0 ? notices.slice(0, 3).map(n => (
-                      <div key={n._id} className="p-3 border border-slate-100 rounded-lg hover:bg-slate-50">
-                        <p className="font-semibold text-slate-800 text-sm">{n.title}</p>
-                        <p className="text-xs text-slate-600 mt-1">{formatDate(n.createdAt)}</p>
+                      <div key={n._id} className="p-3 border border-slate-100  rounded-lg hover:bg-slate-50 ">
+                        <p className="font-semibold text-slate-800  text-sm">{n.title}</p>
+                        <p className="text-xs text-slate-600  mt-1">{formatDate(n.createdAt)}</p>
                       </div>
-                    )) : <p className="text-sm text-slate-500">No notices</p>}
+                    )) : <p className="text-sm text-slate-500 ">No notices</p>}
                   </div>
                 </div>
               </div>
@@ -410,7 +410,7 @@ const StudentDashboard = () => {
               {approvedFiles && approvedFiles.length > 0 ? (
                 <div className="space-y-3">
                   {approvedFiles.map(file => (
-                    <div key={file._id} className="p-4 border border-gray-200 rounded-apple-lg hover:shadow-apple-md transition">
+                    <div key={file._id} className="p-4 border border-gray-200  rounded-apple-lg hover:shadow-apple-md transition">
                       <div className="flex items-start justify-between">
                         <div className="flex-1">
                           <h4 className="font-semibold text-apple-text">{file.title}</h4>
@@ -461,7 +461,7 @@ const StudentDashboard = () => {
                       value={searchText}
                       onChange={(e) => setSearchText(e.target.value)}
                       placeholder="Search files..."
-                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none transition"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-200  rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none transition"
                     />
                   </div>
                   <button
@@ -473,14 +473,14 @@ const StudentDashboard = () => {
                 </div>
 
                 {/* Filters */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-6 bg-apple-bg rounded-apple-lg border border-gray-200">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-6 bg-apple-bg rounded-apple-lg border border-gray-200 ">
                   <div>
                     <label className="block text-sm font-semibold text-apple-text mb-2">File Type</label>
                     <select
                       name="fileType"
                       value={filters.fileType}
                       onChange={handleFilterChange}
-                      className="w-full p-3 border border-gray-200 rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none text-sm"
+                      className="w-full p-3 border border-gray-200  rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none text-sm"
                     >
                       <option value="">All Types</option>
                       <option value="Notes">Notes</option>
@@ -496,7 +496,7 @@ const StudentDashboard = () => {
                       name="status"
                       value={filters.status}
                       onChange={handleFilterChange}
-                      className="w-full p-3 border border-gray-200 rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none text-sm"
+                      className="w-full p-3 border border-gray-200  rounded-apple-lg focus:ring-2 focus:ring-system-blue outline-none text-sm"
                     >
                       <option value="">All Status</option>
                       <option value="Approved">Approved</option>
@@ -505,8 +505,8 @@ const StudentDashboard = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">Active Filters</label>
-                    <div className="p-3 bg-white border border-slate-300 rounded-lg text-sm font-medium text-slate-700">
+                    <label className="block text-sm font-semibold text-slate-700  mb-2">Active Filters</label>
+                    <div className="p-3 bg-white  border border-slate-300  rounded-lg text-sm font-medium text-slate-700 ">
                       {Object.values(filters).filter(f => f).length || 0} filter(s) applied
                     </div>
                   </div>
@@ -515,24 +515,24 @@ const StudentDashboard = () => {
 
               {/* Files Grid */}
               <div className="space-y-4">
-                <h3 className="font-semibold text-slate-800 text-lg">
+                <h3 className="font-semibold text-slate-800  text-lg">
                   {filteredFiles.length} file(s) found
                 </h3>
 
                 {filteredFiles.length > 0 ? (
                   <div className="grid grid-cols-1 gap-4 max-h-[600px] overflow-y-auto">
                     {filteredFiles.map((file) => (
-                      <div key={file._id} className="p-6 border-2 border-slate-200 rounded-lg hover:border-blue-300 hover:shadow-lg transition-all">
+                      <div key={file._id} className="p-6 border-2 border-slate-200  rounded-lg hover:border-blue-300 hover:shadow-lg transition-all">
                         <div className="flex items-start justify-between gap-4">
                           <div className="flex-1">
-                            <h4 className="font-bold text-slate-800 text-lg">{file.title}</h4>
-                            <p className="text-slate-600 mt-2 text-sm">{file.description}</p>
+                            <h4 className="font-bold text-slate-800  text-lg">{file.title}</h4>
+                            <p className="text-slate-600  mt-2 text-sm">{file.description}</p>
                             <div className="flex flex-wrap items-center gap-4 mt-4 text-sm">
-                              <span className="text-slate-600">👤 {file.uploadedBy?.userName || 'Unknown'}</span>
-                              <span className="text-slate-600">📅 {formatDate(file.createdAt)}</span>
+                              <span className="text-slate-600 ">👤 {file.uploadedBy?.userName || 'Unknown'}</span>
+                              <span className="text-slate-600 ">📅 {formatDate(file.createdAt)}</span>
                               <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">{file.fileType}</span>
                               <span className={`px-3 py-1 rounded-full font-medium ${getStatusColor(file.status)}`}>{file.status}</span>
-                              <span className="text-slate-600">📥 {file.downloads || 0}</span>
+                              <span className="text-slate-600 ">📥 {file.downloads || 0}</span>
                             </div>
                           </div>
                         </div>
@@ -541,7 +541,7 @@ const StudentDashboard = () => {
                   </div>
                 ) : (
                   <div className="text-center py-12">
-                    <p className="text-slate-500 text-lg">
+                    <p className="text-slate-500  text-lg">
                       {searchText || Object.values(filters).some(f => f) ? '❌ No files match your search' : '📭 No files available'}
                     </p>
                   </div>

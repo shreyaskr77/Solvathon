@@ -50,28 +50,28 @@ const Approvals = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">📋 Pending Uploads</h1>
-        <p className="text-gray-600">Review student uploads and approve or reject them</p>
+        <h1 className="text-3xl font-bold text-gray-900  mb-2">📋 Pending Uploads</h1>
+        <p className="text-gray-600 ">Review student uploads and approve or reject them</p>
       </div>
 
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="bg-white  rounded-lg shadow-md overflow-hidden">
         <table className="w-full">
-          <thead className="bg-gray-100 border-b">
+          <thead className="bg-gray-100  border-b">
             <tr>
-              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Title</th>
-              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Uploaded By</th>
-              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Type</th>
-              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Uploaded At</th>
-              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Actions</th>
+              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700 ">Title</th>
+              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700 ">Uploaded By</th>
+              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700 ">Type</th>
+              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700 ">Uploaded At</th>
+              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700 ">Actions</th>
             </tr>
           </thead>
           <tbody>
             {approvals.map((file) => (
-              <tr key={file._id} className="border-b hover:bg-gray-50 transition">
-                <td className="px-6 py-4 text-gray-900 font-medium">{file.title}</td>
-                <td className="px-6 py-4 text-gray-600">{file.uploadedBy?.userName}</td>
+              <tr key={file._id} className="border-b hover:bg-gray-50  transition">
+                <td className="px-6 py-4 text-gray-900  font-medium">{file.title}</td>
+                <td className="px-6 py-4 text-gray-600 ">{file.uploadedBy?.userName}</td>
                 <td className="px-6 py-4"><span className="px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800">{file.fileType}</span></td>
-                <td className="px-6 py-4 text-gray-600 text-sm">{new Date(file.createdAt).toLocaleString()}</td>
+                <td className="px-6 py-4 text-gray-600  text-sm">{new Date(file.createdAt).toLocaleString()}</td>
                 <td className="px-6 py-4">
                   <div className="flex items-center gap-2">
                     <button
@@ -101,7 +101,7 @@ const Approvals = () => {
             ))}
             {approvals.length === 0 && (
               <tr>
-                <td colSpan={5} className="p-6 text-center text-gray-600">No pending files</td>
+                <td colSpan={5} className="p-6 text-center text-gray-600 ">No pending files</td>
               </tr>
             )}
           </tbody>
@@ -110,8 +110,8 @@ const Approvals = () => {
 
       {viewFile && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg shadow-lg max-w-2xl w-full mx-4 p-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">{viewFile.title}</h2>
+          <div className="bg-white  rounded-lg shadow-lg max-w-2xl w-full mx-4 p-6">
+            <h2 className="text-xl font-bold text-gray-900  mb-4">{viewFile.title}</h2>
             <div className="space-y-2 mb-6">
               <p><span className="font-semibold">Uploaded By:</span> {viewFile.uploadedBy?.userName}</p>
               <p><span className="font-semibold">Type:</span> {viewFile.fileType}</p>
@@ -125,7 +125,7 @@ const Approvals = () => {
             </div>
             <button
               onClick={() => setViewFile(null)}
-              className="w-full bg-gray-200 hover:bg-gray-300 text-gray-900 font-semibold py-2 rounded-lg transition"
+              className="w-full bg-gray-200 hover:bg-gray-300 text-gray-900  font-semibold py-2 rounded-lg transition"
             >
               Close
             </button>

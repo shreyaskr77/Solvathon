@@ -22,33 +22,30 @@ body {
 }
 
 /* Apple-style input fields */
-input, textarea, select {
-  @apply bg-white rounded-apple-lg border border-gray-200 px-4 py-3 text-sm font-medium 
-         text-apple-text placeholder-gray-400 focus:outline-none focus:border-system-blue 
-         focus:ring-1 focus:ring-system-blue shadow-apple-sm transition-all duration-200;
+input,
+textarea,
+select {
+  @apply bg-white rounded-apple-lg border border-gray-200 px-4 py-3 text-sm font-medium text-apple-text placeholder-gray-400 focus:outline-none focus:border-system-blue focus:ring-1 focus:ring-system-blue shadow-apple-sm transition-all duration-200;
 }
 
-input:hover:not(:focus), textarea:hover:not(:focus), select:hover:not(:focus) {
+input:hover:not(:focus),
+textarea:hover:not(:focus),
+select:hover:not(:focus) {
   @apply border-gray-300 shadow-apple-md;
 }
 
 /* Apple-style buttons */
 .btn-apple {
-  @apply px-6 py-3 rounded-apple-lg font-medium text-white bg-system-blue 
-         hover:bg-system-blue-hover shadow-apple-sm transition-all duration-200 
-         active:scale-95 cursor-pointer;
+  @apply px-6 py-3 rounded-apple-lg font-medium text-white bg-system-blue hover:bg-system-blue-hover shadow-apple-sm transition-all duration-200 active:scale-95 cursor-pointer;
 }
 
 .btn-apple-secondary {
-  @apply px-6 py-3 rounded-apple-lg font-medium text-system-blue border border-system-blue 
-         bg-white hover:bg-gray-50 shadow-apple-sm transition-all duration-200 
-         active:scale-95 cursor-pointer;
+  @apply px-6 py-3 rounded-apple-lg font-medium text-system-blue border border-system-blue bg-white hover:bg-gray-50 shadow-apple-sm transition-all duration-200 active:scale-95 cursor-pointer;
 }
 
 /* Apple-style cards */
 .card-apple {
-  @apply bg-white rounded-apple-xl shadow-apple-sm border border-gray-200 
-         p-6 hover:shadow-apple-lg transition-shadow duration-300;
+  @apply bg-white rounded-apple-xl shadow-apple-sm border border-gray-200 p-6 hover:shadow-apple-lg transition-shadow duration-300;
 }
 
 /* Glass morphism effect */

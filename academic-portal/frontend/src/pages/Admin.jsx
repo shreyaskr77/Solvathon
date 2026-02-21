@@ -150,7 +150,7 @@ const AdminDashboard = () => {
       </div>
 
       {/* Navigation Tabs */}
-      <div className="sticky top-0 bg-white border-b border-slate-200 shadow-sm z-40">
+      <div className="sticky top-0 bg-white  border-b border-slate-200  shadow-sm z-40">
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex gap-8 overflow-x-auto">
             {tabs.map((tab) => {
@@ -162,7 +162,7 @@ const AdminDashboard = () => {
                   className={`flex items-center gap-2 px-4 py-4 font-medium border-b-2 transition-all whitespace-nowrap ${
                     activeTab === tab.id
                       ? 'text-violet-600 border-violet-600'
-                      : 'text-slate-600 border-transparent hover:text-violet-600'
+                      : 'text-slate-600  border-transparent hover:text-violet-600'
                   }`}
                 >
                   <Icon className="w-5 h-5" />
@@ -199,19 +199,19 @@ const AdminDashboard = () => {
             {/* Quick Actions & Recent */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {/* Pending Approvals */}
-              <div className="bg-white rounded-xl shadow-md border border-slate-200 p-6 lg:col-span-2">
-                <h3 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+              <div className="bg-white  rounded-xl shadow-md border border-slate-200  p-6 lg:col-span-2">
+                <h3 className="text-xl font-bold text-slate-800  mb-6 flex items-center gap-2">
                   <CheckCircleIcon className="w-6 h-6 text-violet-600" />
                   Recent Pending Approvals
                 </h3>
                 <div className="space-y-3 max-h-96 overflow-y-auto">
                   {pendingFiles.slice(0, 6).map(file => (
-                    <div key={file._id} className="p-4 border border-slate-100 rounded-lg hover:bg-slate-50 transition">
+                    <div key={file._id} className="p-4 border border-slate-100  rounded-lg hover:bg-slate-50  transition">
                       <div className="flex items-start justify-between">
                         <div className="flex-1">
-                          <h4 className="font-semibold text-slate-800">{file.title}</h4>
-                          <p className="text-sm text-slate-600 mt-1">{file.description}</p>
-                          <div className="flex items-center gap-4 mt-2 text-xs text-slate-500">
+                          <h4 className="font-semibold text-slate-800 ">{file.title}</h4>
+                          <p className="text-sm text-slate-600  mt-1">{file.description}</p>
+                          <div className="flex items-center gap-4 mt-2 text-xs text-slate-500 ">
                             <span>👤 {file.uploadedBy?.userName || 'Unknown'}</span>
                             <span>📅 {formatDate(file.createdAt)}</span>
                           </div>
@@ -220,7 +220,7 @@ const AdminDashboard = () => {
                     </div>
                   ))}
                   {pendingFiles.length === 0 && (
-                    <p className="text-center text-slate-500 py-6">No pending approvals</p>
+                    <p className="text-center text-slate-500  py-6">No pending approvals</p>
                   )}
                 </div>
               </div>
@@ -228,34 +228,34 @@ const AdminDashboard = () => {
               {/* Events & Notices */}
               <div className="space-y-6">
                 {/* Recent Events */}
-                <div className="bg-white rounded-xl shadow-md border border-slate-200 p-6">
-                  <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                <div className="bg-white  rounded-xl shadow-md border border-slate-200  p-6">
+                  <h3 className="text-lg font-bold text-slate-800  mb-4 flex items-center gap-2">
                     <CalendarIcon className="w-5 h-5 text-violet-600" />
                     Events
                   </h3>
                   <div className="space-y-3">
                     {events.length > 0 ? events.slice(0, 3).map(ev => (
-                      <div key={ev._id} className="p-3 border border-slate-100 rounded-lg hover:bg-slate-50">
-                        <p className="font-semibold text-slate-800 text-sm">{ev.title}</p>
-                        <p className="text-xs text-slate-600 mt-1">{formatDate(ev.date)}</p>
+                      <div key={ev._id} className="p-3 border border-slate-100  rounded-lg hover:bg-slate-50 ">
+                        <p className="font-semibold text-slate-800  text-sm">{ev.title}</p>
+                        <p className="text-xs text-slate-600  mt-1">{formatDate(ev.date)}</p>
                       </div>
-                    )) : <p className="text-sm text-slate-500">No events</p>}
+                    )) : <p className="text-sm text-slate-500 ">No events</p>}
                   </div>
                 </div>
 
                 {/* Recent Notices */}
-                <div className="bg-white rounded-xl shadow-md border border-slate-200 p-6">
-                  <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                <div className="bg-white  rounded-xl shadow-md border border-slate-200  p-6">
+                  <h3 className="text-lg font-bold text-slate-800  mb-4 flex items-center gap-2">
                     <DocumentPlusIcon className="w-5 h-5 text-violet-600" />
                     Notices
                   </h3>
                   <div className="space-y-3">
                     {notices.length > 0 ? notices.slice(0, 3).map(n => (
-                      <div key={n._id} className="p-3 border border-slate-100 rounded-lg hover:bg-slate-50">
-                        <p className="font-semibold text-slate-800 text-sm">{n.title}</p>
-                        <p className="text-xs text-slate-600 mt-1">{formatDate(n.createdAt)}</p>
+                      <div key={n._id} className="p-3 border border-slate-100  rounded-lg hover:bg-slate-50 ">
+                        <p className="font-semibold text-slate-800  text-sm">{n.title}</p>
+                        <p className="text-xs text-slate-600  mt-1">{formatDate(n.createdAt)}</p>
                       </div>
-                    )) : <p className="text-sm text-slate-500">No notices</p>}
+                    )) : <p className="text-sm text-slate-500 ">No notices</p>}
                   </div>
                 </div>
               </div>
@@ -266,9 +266,9 @@ const AdminDashboard = () => {
         {/* APPROVALS TAB */}
         {activeTab === 'approvals' && (
           <div>
-            <h2 className="text-2xl font-bold text-slate-800 mb-8">Review & Approve Files</h2>
+            <h2 className="text-2xl font-bold text-slate-800  mb-8">Review & Approve Files</h2>
             
-            <div className="bg-white rounded-xl shadow-md border border-slate-200 p-8">
+            <div className="bg-white  rounded-xl shadow-md border border-slate-200  p-8">
               {/* Search */}
               <div className="mb-8">
                 <div className="flex items-center gap-3">
@@ -279,7 +279,7 @@ const AdminDashboard = () => {
                       value={searchText} 
                       onChange={(e) => setSearchText(e.target.value)}
                       placeholder="Search files..." 
-                      className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-violet-500 outline-none transition"
+                      className="w-full pl-10 pr-4 py-3 border border-slate-300  rounded-lg focus:ring-2 focus:ring-violet-500 outline-none transition"
                     />
                   </div>
                   <div className="px-6 py-3 bg-violet-100 text-violet-800 rounded-lg font-medium">
@@ -292,12 +292,12 @@ const AdminDashboard = () => {
               <div className="space-y-6">
                 {filteredPending.length > 0 ? (
                   filteredPending.map((file) => (
-                    <div key={file._id} className="p-6 border-2 border-slate-200 rounded-lg hover:shadow-lg transition-all">
+                    <div key={file._id} className="p-6 border-2 border-slate-200  rounded-lg hover:shadow-lg transition-all">
                       <div className="flex items-start justify-between gap-4 mb-4">
                         <div className="flex-1">
-                          <h4 className="font-bold text-slate-800 text-lg">{file.title}</h4>
-                          <p className="text-slate-600 mt-2">{file.description}</p>
-                          <div className="flex flex-wrap items-center gap-4 mt-4 text-sm text-slate-600">
+                          <h4 className="font-bold text-slate-800  text-lg">{file.title}</h4>
+                          <p className="text-slate-600  mt-2">{file.description}</p>
+                          <div className="flex flex-wrap items-center gap-4 mt-4 text-sm text-slate-600 ">
                             <span>👤 {file.uploadedBy?.userName || 'Unknown'}</span>
                             <span>📅 {formatDate(file.createdAt)}</span>
                             <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">{file.fileType}</span>
@@ -308,7 +308,7 @@ const AdminDashboard = () => {
                       {/* Rejection Reason Input */}
                       {selectedFileId === file._id && (
                         <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
-                          <label className="block text-sm font-semibold text-slate-700 mb-2">Rejection Reason</label>
+                          <label className="block text-sm font-semibold text-slate-700  mb-2">Rejection Reason</label>
                           <textarea 
                             value={rejectionReason} 
                             onChange={(e) => setRejectionReason(e.target.value)}
@@ -342,7 +342,7 @@ const AdminDashboard = () => {
                         {selectedFileId === file._id && (
                           <button
                             onClick={() => setSelectedFileId(null)}
-                            className="px-6 bg-slate-300 hover:bg-slate-400 text-slate-800 font-semibold rounded-lg transition"
+                            className="px-6 bg-slate-300 hover:bg-slate-400 text-slate-800  font-semibold rounded-lg transition"
                           >
                             Cancel
                           </button>
@@ -352,7 +352,7 @@ const AdminDashboard = () => {
                   ))
                 ) : (
                   <div className="text-center py-12">
-                    <p className="text-slate-500 text-lg">✅ No pending files to review</p>
+                    <p className="text-slate-500  text-lg">✅ No pending files to review</p>
                   </div>
                 )}
               </div>
@@ -365,37 +365,37 @@ const AdminDashboard = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Add Subject Form */}
             <div>
-              <h2 className="text-2xl font-bold text-slate-800 mb-6">Add New Subject</h2>
+              <h2 className="text-2xl font-bold text-slate-800  mb-6">Add New Subject</h2>
               
-              <div className="bg-white rounded-xl shadow-md border border-slate-200 p-8">
+              <div className="bg-white  rounded-xl shadow-md border border-slate-200  p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="bg-gradient-to-br from-violet-500 to-violet-600 p-3 rounded-lg">
                     <AcademicCapIcon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-800">New Subject</h3>
+                  <h3 className="text-xl font-bold text-slate-800 ">New Subject</h3>
                 </div>
 
                 <form onSubmit={addSubject} className="space-y-5">
                   <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">Subject Name</label>
+                    <label className="block text-sm font-semibold text-slate-700  mb-2">Subject Name</label>
                     <input 
                       type="text" 
                       value={subjectName} 
                       onChange={(e) => setSubjectName(e.target.value)} 
                       required 
                       placeholder="e.g., Data Structures"
-                      className="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-violet-500 outline-none transition"
+                      className="w-full p-3 border border-slate-300  rounded-lg focus:ring-2 focus:ring-violet-500 outline-none transition"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">Subject Code</label>
+                    <label className="block text-sm font-semibold text-slate-700  mb-2">Subject Code</label>
                     <input 
                       type="text" 
                       value={subjectCode} 
                       onChange={(e) => setSubjectCode(e.target.value)} 
                       required 
                       placeholder="e.g., CS201"
-                      className="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-violet-500 outline-none transition"
+                      className="w-full p-3 border border-slate-300  rounded-lg focus:ring-2 focus:ring-violet-500 outline-none transition"
                     />
                   </div>
                   <button 
@@ -410,17 +410,17 @@ const AdminDashboard = () => {
 
             {/* Existing Subjects */}
             <div className="lg:col-span-2">
-              <h2 className="text-2xl font-bold text-slate-800 mb-6">Existing Subjects ({subjects.length})</h2>
+              <h2 className="text-2xl font-bold text-slate-800  mb-6">Existing Subjects ({subjects.length})</h2>
               
-              <div className="bg-white rounded-xl shadow-md border border-slate-200 p-8">
+              <div className="bg-white  rounded-xl shadow-md border border-slate-200  p-8">
                 <div className="space-y-3 max-h-[600px] overflow-y-auto">
                   {subjects.length > 0 ? (
                     subjects.map((subject) => (
-                      <div key={subject._id} className="p-4 border-2 border-slate-200 rounded-lg hover:border-violet-300 hover:shadow-md transition">
+                      <div key={subject._id} className="p-4 border-2 border-slate-200  rounded-lg hover:border-violet-300 hover:shadow-md transition">
                         <div className="flex items-start justify-between">
                           <div className="flex-1">
-                            <h4 className="font-bold text-slate-800">{subject.subjectName}</h4>
-                            <p className="text-sm text-slate-600 mt-1">Code: {subject.subjectCode}</p>
+                            <h4 className="font-bold text-slate-800 ">{subject.subjectName}</h4>
+                            <p className="text-sm text-slate-600  mt-1">Code: {subject.subjectCode}</p>
                           </div>
                           <span className="bg-violet-100 text-violet-800 px-3 py-1 rounded-full text-sm font-medium">
                             Active
@@ -429,7 +429,7 @@ const AdminDashboard = () => {
                       </div>
                     ))
                   ) : (
-                    <p className="text-center text-slate-500 py-6">No subjects added yet</p>
+                    <p className="text-center text-slate-500  py-6">No subjects added yet</p>
                   )}
                 </div>
               </div>
@@ -440,35 +440,35 @@ const AdminDashboard = () => {
         {/* ANALYTICS TAB */}
         {activeTab === 'analytics' && (
           <div>
-            <h2 className="text-2xl font-bold text-slate-800 mb-8">System Analytics</h2>
+            <h2 className="text-2xl font-bold text-slate-800  mb-8">System Analytics</h2>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Content Overview */}
-              <div className="bg-white rounded-xl shadow-md border border-slate-200 p-8">
-                <h3 className="text-xl font-bold text-slate-800 mb-6">Content Overview</h3>
+              <div className="bg-white  rounded-xl shadow-md border border-slate-200  p-8">
+                <h3 className="text-xl font-bold text-slate-800  mb-6">Content Overview</h3>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
-                    <span className="text-slate-800 font-semibold">Total Files Uploaded</span>
+                    <span className="text-slate-800  font-semibold">Total Files Uploaded</span>
                     <span className="text-2xl font-bold text-blue-600">{stats.totalFiles}</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-green-50 rounded-lg">
-                    <span className="text-slate-800 font-semibold">Approved Files</span>
+                    <span className="text-slate-800  font-semibold">Approved Files</span>
                     <span className="text-2xl font-bold text-green-600">{stats.approvedFiles}</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-yellow-50 rounded-lg">
-                    <span className="text-slate-800 font-semibold">Pending Review</span>
+                    <span className="text-slate-800  font-semibold">Pending Review</span>
                     <span className="text-2xl font-bold text-yellow-600">{stats.pendingApprovals}</span>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-purple-50 rounded-lg">
-                    <span className="text-slate-800 font-semibold">Total Subjects</span>
+                    <span className="text-slate-800  font-semibold">Total Subjects</span>
                     <span className="text-2xl font-bold text-purple-600">{stats.totalSubjects}</span>
                   </div>
                 </div>
               </div>
 
               {/* File Distribution */}
-              <div className="bg-white rounded-xl shadow-md border border-slate-200 p-8">
-                <h3 className="text-xl font-bold text-slate-800 mb-6">File Types Distribution</h3>
+              <div className="bg-white  rounded-xl shadow-md border border-slate-200  p-8">
+                <h3 className="text-xl font-bold text-slate-800  mb-6">File Types Distribution</h3>
                 <div className="space-y-4">
                   {[
                     { type: 'Notes', count: allFiles.filter(f => f.fileType === 'Notes').length, color: 'blue' },
@@ -478,8 +478,8 @@ const AdminDashboard = () => {
                   ].map((item) => (
                     <div key={item.type}>
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-slate-700 font-semibold">{item.type}</span>
-                        <span className="text-slate-600">{item.count} files</span>
+                        <span className="text-slate-700  font-semibold">{item.type}</span>
+                        <span className="text-slate-600 ">{item.count} files</span>
                       </div>
                       <div className={`w-full h-3 bg-${item.color}-100 rounded-full overflow-hidden`}>
                         <div 

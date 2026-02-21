@@ -168,11 +168,11 @@ const Login = () => {
                   <p className="text-xs font-semibold text-system-blue mb-2">DEMO CREDENTIALS</p>
                   <div className="space-y-1 text-sm text-apple-text">
                     {selectedRole.value === 'student' ? (
-                      <p>ID: <code className="bg-white px-2 py-1 rounded font-mono text-xs">{selectedRole.registrationNumber}</code></p>
+                      <p>ID: <code className="bg-white  px-2 py-1 rounded font-mono text-xs">{selectedRole.registrationNumber}</code></p>
                     ) : (
-                      <p>Email: <code className="bg-white px-2 py-1 rounded font-mono text-xs">{selectedRole.email}</code></p>
+                      <p>Email: <code className="bg-white  px-2 py-1 rounded font-mono text-xs">{selectedRole.email}</code></p>
                     )}
-                    <p>Password: <code className="bg-white px-2 py-1 rounded font-mono text-xs">{selectedRole.password}</code></p>
+                    <p>Password: <code className="bg-white  px-2 py-1 rounded font-mono text-xs">{selectedRole.password}</code></p>
                   </div>
                 </div>
 
@@ -219,7 +219,7 @@ const Login = () => {
                 </form>
 
                 {/* Register Link */}
-                <div className="mt-6 pt-6 border-t border-gray-200">
+                <div className="mt-6 pt-6 border-t border-gray-200 ">
                   <p className="text-center text-sm text-apple-gray">
                     Don't have an account?{" "}
                     <Link to="/register" className="text-system-blue font-semibold hover:text-system-blue-hover transition-colors">

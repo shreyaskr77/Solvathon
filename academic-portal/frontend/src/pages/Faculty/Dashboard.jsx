@@ -195,7 +195,7 @@ const FacultyDashboard = () => {
       case 'Approved': return 'bg-green-100 text-green-800';
       case 'Rejected': return 'bg-red-100 text-red-800';
       case 'Pending': return 'bg-yellow-100 text-yellow-800';
-      default: return 'bg-gray-100 text-gray-800';
+      default: return 'bg-gray-100  text-gray-800 ';
     }
   };
 
@@ -209,7 +209,7 @@ const FacultyDashboard = () => {
   return (
     <div className="min-h-screen bg-apple-bg">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200 p-8">
+      <div className="bg-white  border-b border-gray-200  p-8">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl font-bold mb-2 text-apple-text">Faculty Dashboard</h1>
           <p className="text-apple-gray">Manage resources, review uploads, and oversee teaching materials</p>
@@ -219,7 +219,7 @@ const FacultyDashboard = () => {
       {/* Navigation Tabs */}
       <div className="sticky top-16 z-40 py-6 bg-apple-bg/80 backdrop-blur-md">
         <div className="flex justify-center w-full px-4">
-          <div className="inline-flex gap-2 p-2 bg-white/60 border border-gray-200/50 rounded-full shadow-apple-md backdrop-blur-xl overflow-x-auto max-w-full hide-scrollbar">
+          <div className="inline-flex gap-2 p-2 bg-white/60  border border-gray-200/50  rounded-full shadow-apple-md backdrop-blur-xl overflow-x-auto max-w-full hide-scrollbar">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.id;
@@ -230,7 +230,7 @@ const FacultyDashboard = () => {
                   className={`
                     relative flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap
                     ${isActive
-                      ? 'text-system-blue bg-white shadow-apple-sm scale-105'
+                      ? 'text-system-blue bg-white  shadow-apple-sm scale-105'
                       : 'text-apple-gray hover:text-apple-text hover:bg-black/5'}
                   `}
                 >
@@ -275,12 +275,12 @@ const FacultyDashboard = () => {
                 </h3>
                 <div className="space-y-3 max-h-96 overflow-y-auto">
                   {myUploads.slice(0, 6).map(file => (
-                    <div key={file._id} className="p-4 border border-slate-100 rounded-lg hover:bg-slate-50 transition">
+                    <div key={file._id} className="p-4 border border-slate-100  rounded-lg hover:bg-slate-50  transition">
                       <div className="flex items-start justify-between">
                         <div className="flex-1">
-                          <h4 className="font-semibold text-slate-800">{file.title}</h4>
-                          <p className="text-sm text-slate-600 mt-1">{file.description}</p>
-                          <div className="flex items-center gap-4 mt-2 text-xs text-slate-500">
+                          <h4 className="font-semibold text-slate-800 ">{file.title}</h4>
+                          <p className="text-sm text-slate-600  mt-1">{file.description}</p>
+                          <div className="flex items-center gap-4 mt-2 text-xs text-slate-500 ">
                             <span>📅 {formatDate(file.createdAt)}</span>
                             <span className={`px-2 py-1 rounded font-medium ${getStatusColor(file.status)}`}>{file.status}</span>
                           </div>
@@ -289,7 +289,7 @@ const FacultyDashboard = () => {
                     </div>
                   ))}
                   {myUploads.length === 0 && (
-                    <p className="text-center text-slate-500 py-6">No uploads yet</p>
+                    <p className="text-center text-slate-500  py-6">No uploads yet</p>
                   )}
                 </div>
               </div>
@@ -297,34 +297,34 @@ const FacultyDashboard = () => {
               {/* Events & Notices */}
               <div className="space-y-6">
                 {/* Upcoming Events */}
-                <div className="bg-white rounded-xl shadow-md border border-slate-200 p-6">
-                  <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                <div className="bg-white  rounded-xl shadow-md border border-slate-200  p-6">
+                  <h3 className="text-lg font-bold text-slate-800  mb-4 flex items-center gap-2">
                     <CalendarIcon className="w-5 h-5 text-green-600" />
                     Events
                   </h3>
                   <div className="space-y-3">
                     {events.length > 0 ? events.slice(0, 3).map(ev => (
-                      <div key={ev._id} className="p-3 border border-slate-100 rounded-lg hover:bg-slate-50">
-                        <p className="font-semibold text-slate-800 text-sm">{ev.title}</p>
-                        <p className="text-xs text-slate-600 mt-1">{formatDate(ev.date)}</p>
+                      <div key={ev._id} className="p-3 border border-slate-100  rounded-lg hover:bg-slate-50 ">
+                        <p className="font-semibold text-slate-800  text-sm">{ev.title}</p>
+                        <p className="text-xs text-slate-600  mt-1">{formatDate(ev.date)}</p>
                       </div>
-                    )) : <p className="text-sm text-slate-500">No events</p>}
+                    )) : <p className="text-sm text-slate-500 ">No events</p>}
                   </div>
                 </div>
 
                 {/* Notices */}
-                <div className="bg-white rounded-xl shadow-md border border-slate-200 p-6">
-                  <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                <div className="bg-white  rounded-xl shadow-md border border-slate-200  p-6">
+                  <h3 className="text-lg font-bold text-slate-800  mb-4 flex items-center gap-2">
                     <DocumentPlusIcon className="w-5 h-5 text-green-600" />
                     Notices
                   </h3>
                   <div className="space-y-3">
                     {notices.length > 0 ? notices.slice(0, 3).map(n => (
-                      <div key={n._id} className="p-3 border border-slate-100 rounded-lg hover:bg-slate-50">
-                        <p className="font-semibold text-slate-800 text-sm">{n.title}</p>
-                        <p className="text-xs text-slate-600 mt-1">{formatDate(n.createdAt)}</p>
+                      <div key={n._id} className="p-3 border border-slate-100  rounded-lg hover:bg-slate-50 ">
+                        <p className="font-semibold text-slate-800  text-sm">{n.title}</p>
+                        <p className="text-xs text-slate-600  mt-1">{formatDate(n.createdAt)}</p>
                       </div>
-                    )) : <p className="text-sm text-slate-500">No notices</p>}
+                    )) : <p className="text-sm text-slate-500 ">No notices</p>}
                   </div>
                 </div>
               </div>
@@ -335,45 +335,45 @@ const FacultyDashboard = () => {
         {/* UPLOAD CENTER TAB */}
         {activeTab === 'upload' && (
           <div>
-            <h2 className="text-2xl font-bold text-slate-800 mb-8">Upload Study Materials</h2>
+            <h2 className="text-2xl font-bold text-slate-800  mb-8">Upload Study Materials</h2>
 
-            <div className="bg-white rounded-xl shadow-md border border-slate-200 p-8 max-w-2xl">
+            <div className="bg-white  rounded-xl shadow-md border border-slate-200  p-8 max-w-2xl">
               <div className="flex items-center gap-3 mb-6">
                 <div className="bg-gradient-to-br from-green-500 to-green-600 p-3 rounded-lg">
                   <DocumentArrowUpIcon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-800">Upload Notes</h3>
+                <h3 className="text-2xl font-bold text-slate-800 ">Upload Notes</h3>
               </div>
 
               <form onSubmit={uploadNote} className="space-y-5">
                 <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">Note Title</label>
+                  <label className="block text-sm font-semibold text-slate-700  mb-2">Note Title</label>
                   <input
                     type="text"
                     value={noteTitle}
                     onChange={(e) => setNoteTitle(e.target.value)}
                     required
                     placeholder="e.g., Chapter 5 - Advanced Concepts"
-                    className="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none transition"
+                    className="w-full p-3 border border-slate-300  rounded-lg focus:ring-2 focus:ring-green-500 outline-none transition"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">Description</label>
+                  <label className="block text-sm font-semibold text-slate-700  mb-2">Description</label>
                   <textarea
                     value={noteDescription}
                     onChange={(e) => setNoteDescription(e.target.value)}
                     placeholder="Describe your study materials..."
                     rows="3"
-                    className="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none transition"
+                    className="w-full p-3 border border-slate-300  rounded-lg focus:ring-2 focus:ring-green-500 outline-none transition"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">Subject</label>
+                  <label className="block text-sm font-semibold text-slate-700  mb-2">Subject</label>
                   <select
                     value={noteSubject}
                     onChange={(e) => setNoteSubject(e.target.value)}
                     required
-                    className="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none transition"
+                    className="w-full p-3 border border-slate-300  rounded-lg focus:ring-2 focus:ring-green-500 outline-none transition"
                   >
                     <option value="">Select a subject</option>
                     {subjects.map(subj => (
@@ -382,11 +382,11 @@ const FacultyDashboard = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">File Type</label>
+                  <label className="block text-sm font-semibold text-slate-700  mb-2">File Type</label>
                   <select
                     value={noteFileType}
                     onChange={(e) => setNoteFileType(e.target.value)}
-                    className="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none transition"
+                    className="w-full p-3 border border-slate-300  rounded-lg focus:ring-2 focus:ring-green-500 outline-none transition"
                   >
                     <option value="Notes">Notes</option>
                     <option value="Assignment">Assignment</option>
@@ -395,13 +395,13 @@ const FacultyDashboard = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">Upload File</label>
+                  <label className="block text-sm font-semibold text-slate-700  mb-2">Upload File</label>
                   <input
                     type="file"
                     onChange={(e) => setNoteFile(e.target.files[0])}
                     required
                     accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.jpg,.png"
-                    className="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none transition"
+                    className="w-full p-3 border border-slate-300  rounded-lg focus:ring-2 focus:ring-green-500 outline-none transition"
                   />
                   {noteFile && (
                     <p className="text-sm text-green-600 mt-2">✓ {noteFile.name}</p>
@@ -434,7 +434,7 @@ const FacultyDashboard = () => {
                       value={searchPendingText}
                       onChange={(e) => setSearchPendingText(e.target.value)}
                       placeholder="Search by file title or student name..."
-                      className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none transition"
+                      className="w-full pl-10 pr-4 py-3 border border-slate-300  rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none transition"
                     />
                   </div>
                   <div className="px-4 py-3 bg-yellow-100 text-yellow-800 rounded-lg font-semibold whitespace-nowrap">
@@ -447,15 +447,15 @@ const FacultyDashboard = () => {
               <div className="space-y-4">
                 {filteredPendingFiles.length > 0 ? (
                   filteredPendingFiles.map((file) => (
-                    <div key={file._id} className="p-6 border-2 border-slate-200 rounded-lg hover:border-indigo-300 hover:shadow-md transition-all bg-white">
+                    <div key={file._id} className="p-6 border-2 border-slate-200  rounded-lg hover:border-indigo-300 hover:shadow-md transition-all bg-white ">
                       <div className="flex items-start justify-between gap-4">
                         <div className="flex-1">
-                          <h4 className="font-bold text-slate-800 text-lg">{file.title}</h4>
-                          <p className="text-slate-600 mt-2">{file.description}</p>
+                          <h4 className="font-bold text-slate-800  text-lg">{file.title}</h4>
+                          <p className="text-slate-600  mt-2">{file.description}</p>
 
                           <div className="flex flex-wrap items-center gap-4 mt-4 text-sm">
-                            <span className="text-slate-600">👤 <strong>{file.uploadedBy?.name || file.uploadedBy?.userName || 'Unknown'}</strong></span>
-                            <span className="text-slate-600">📅 {formatDate(file.createdAt)}</span>
+                            <span className="text-slate-600 ">👤 <strong>{file.uploadedBy?.name || file.uploadedBy?.userName || 'Unknown'}</strong></span>
+                            <span className="text-slate-600 ">📅 {formatDate(file.createdAt)}</span>
                             <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium">{file.fileType}</span>
                             <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full font-medium">{file.status}</span>
                           </div>
@@ -476,7 +476,7 @@ const FacultyDashboard = () => {
                                 placeholder="Rejection reason..."
                                 value={rejectionReason}
                                 onChange={(e) => setRejectionReason(e.target.value)}
-                                className="px-3 py-2 border border-slate-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
+                                className="px-3 py-2 border border-slate-300  rounded text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
                               />
                               <button
                                 onClick={() => rejectFile(file._id)}
@@ -487,7 +487,7 @@ const FacultyDashboard = () => {
                               </button>
                               <button
                                 onClick={() => { setRejectingFileId(null); setRejectionReason(''); }}
-                                className="bg-slate-300 hover:bg-slate-400 text-slate-800 px-4 py-2 rounded text-sm font-medium transition-colors"
+                                className="bg-slate-300 hover:bg-slate-400 text-slate-800  px-4 py-2 rounded text-sm font-medium transition-colors"
                               >
                                 Cancel
                               </button>
@@ -507,7 +507,7 @@ const FacultyDashboard = () => {
                   ))
                 ) : (
                   <div className="text-center py-12">
-                    <p className="text-slate-500 text-lg">
+                    <p className="text-slate-500  text-lg">
                       {searchPendingText ? '❌ No files match your search' : '✅ No pending files to review'}
                     </p>
                   </div>
@@ -520,9 +520,9 @@ const FacultyDashboard = () => {
         {/* SMART REPOSITORY TAB */}
         {activeTab === 'repository' && (
           <div>
-            <h2 className="text-2xl font-bold text-slate-800 mb-8">Smart Repository</h2>
+            <h2 className="text-2xl font-bold text-slate-800  mb-8">Smart Repository</h2>
 
-            <div className="bg-white rounded-xl shadow-md border border-slate-200 p-8">
+            <div className="bg-white  rounded-xl shadow-md border border-slate-200  p-8">
               <div className="mb-8">
                 <div className="flex items-center gap-3">
                   <div className="flex-1 relative">
@@ -530,30 +530,30 @@ const FacultyDashboard = () => {
                     <input
                       type="text"
                       placeholder="Search approved materials..."
-                      className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none transition"
+                      className="w-full pl-10 pr-4 py-3 border border-slate-300  rounded-lg focus:ring-2 focus:ring-green-500 outline-none transition"
                     />
                   </div>
                 </div>
               </div>
 
               <div className="space-y-4">
-                <h3 className="font-semibold text-slate-800 text-lg">
+                <h3 className="font-semibold text-slate-800  text-lg">
                   {approvedFiles.length} approved file(s)
                 </h3>
 
                 {approvedFiles.length > 0 ? (
                   <div className="grid grid-cols-1 gap-4 max-h-[600px] overflow-y-auto">
                     {approvedFiles.slice(0, 10).map((file) => (
-                      <div key={file._id} className="p-6 border-2 border-slate-200 rounded-lg hover:border-green-300 hover:shadow-lg transition-all">
+                      <div key={file._id} className="p-6 border-2 border-slate-200  rounded-lg hover:border-green-300 hover:shadow-lg transition-all">
                         <div className="flex items-start justify-between gap-4">
                           <div className="flex-1">
-                            <h4 className="font-bold text-slate-800 text-lg">{file.title}</h4>
-                            <p className="text-slate-600 mt-2 text-sm">{file.description}</p>
+                            <h4 className="font-bold text-slate-800  text-lg">{file.title}</h4>
+                            <p className="text-slate-600  mt-2 text-sm">{file.description}</p>
                             <div className="flex flex-wrap items-center gap-4 mt-4 text-sm">
-                              <span className="text-slate-600">👤 {file.uploadedBy?.userName || 'Unknown'}</span>
-                              <span className="text-slate-600">📅 {formatDate(file.createdAt)}</span>
+                              <span className="text-slate-600 ">👤 {file.uploadedBy?.userName || 'Unknown'}</span>
+                              <span className="text-slate-600 ">📅 {formatDate(file.createdAt)}</span>
                               <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ Approved</span>
-                              <span className="text-slate-600">📥 {file.downloads || 0}</span>
+                              <span className="text-slate-600 ">📥 {file.downloads || 0}</span>
                             </div>
                           </div>
                         </div>
@@ -562,7 +562,7 @@ const FacultyDashboard = () => {
                   </div>
                 ) : (
                   <div className="text-center py-12">
-                    <p className="text-slate-500 text-lg">No approved files available</p>
+                    <p className="text-slate-500  text-lg">No approved files available</p>
                   </div>
                 )}
               </div>

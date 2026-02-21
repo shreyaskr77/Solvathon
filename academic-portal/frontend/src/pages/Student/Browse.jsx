@@ -110,11 +110,11 @@ const Browse = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-gray-900 mb-2"> Browse Content</h1>
-        <p className="text-gray-600">Explore study materials shared by faculty</p>
+        <h1 className="text-3xl font-bold text-gray-900  mb-2"> Browse Content</h1>
+        <p className="text-gray-600 ">Explore study materials shared by faculty</p>
       </div>
 
-      <div className="bg-white rounded-lg shadow-md p-4">
+      <div className="bg-white  rounded-lg shadow-md p-4">
         <div className="flex items-center gap-4 mb-4">
           <div className="flex-1 relative">
             <MagnifyingGlassIcon className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
@@ -123,18 +123,18 @@ const Browse = () => {
               placeholder="Search files, topics..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full border border-gray-300 rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full border border-gray-300  rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">Filter by Subject</label>
+            <label className="block text-sm font-semibold text-gray-700  mb-2">Filter by Subject</label>
             <select
               value={filterSubject}
               onChange={(e) => setFilterSubject(e.target.value)}
-              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full border border-gray-300  rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
               <option value="All">All</option>
               {subjectsList.map(s => (
@@ -143,11 +143,11 @@ const Browse = () => {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">Filter by Type</label>
+            <label className="block text-sm font-semibold text-gray-700  mb-2">Filter by Type</label>
             <select
               value={filterType}
               onChange={(e) => setFilterType(e.target.value)}
-              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full border border-gray-300  rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
               {types.map(type => (
                 <option key={type} value={type}>{type}</option>
@@ -157,18 +157,18 @@ const Browse = () => {
         </div>
 
         {/* My Uploads Section */}
-        <div className="mt-6 pt-6 border-t border-gray-200">
+        <div className="mt-6 pt-6 border-t border-gray-200 ">
           <h2 className="text-lg font-semibold mb-3">My Uploads</h2>
           {myUploads.length === 0 ? (
-            <p className="text-sm text-slate-600">You haven't uploaded any files yet. <a href="/student/upload" className="text-indigo-600 hover:underline">Upload your first file</a></p>
+            <p className="text-sm text-slate-600 ">You haven't uploaded any files yet. <a href="/student/upload" className="text-indigo-600 hover:underline">Upload your first file</a></p>
           ) : (
             <ul className="space-y-2">
               {myUploads.map(u => (
-                <li key={u._id} className="p-3 bg-gray-50 rounded border border-gray-200">
+                <li key={u._id} className="p-3 bg-gray-50  rounded border border-gray-200 ">
                   <div className="flex justify-between items-center">
                     <div>
-                      <p className="font-medium text-gray-900">{u.title}</p>
-                      <p className="text-xs text-gray-600">{u.fileType} • {new Date(u.createdAt).toLocaleDateString()}</p>
+                      <p className="font-medium text-gray-900 ">{u.title}</p>
+                      <p className="text-xs text-gray-600 ">{u.fileType} • {new Date(u.createdAt).toLocaleDateString()}</p>
                     </div>
                     <span className={`text-xs font-semibold px-2 py-1 rounded ${u.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
                         u.status === 'approved' ? 'bg-green-100 text-green-800' :
@@ -187,11 +187,11 @@ const Browse = () => {
       <div className="space-y-4">
         {filteredFiles.length > 0 ? (
           filteredFiles.map(file => (
-            <div key={file.id} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
+            <div key={file.id} className="bg-white  rounded-lg shadow-md p-6 hover:shadow-lg transition">
               <div className="flex items-start justify-between mb-3">
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-900">{file.title}</h3>
-                  <p className="text-sm text-gray-600 mt-1">By {file.faculty}</p>
+                  <h3 className="text-lg font-semibold text-gray-900 ">{file.title}</h3>
+                  <p className="text-sm text-gray-600  mt-1">By {file.faculty}</p>
                 </div>
                 <button
                   onClick={() => handleBookmark(file.id)}
@@ -213,8 +213,8 @@ const Browse = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-6">
                   <div className="flex items-center gap-2">
-                    <ArrowDownTrayIcon className="w-5 h-5 text-gray-500" />
-                    <span className="text-sm text-gray-600">{file.downloads} downloads</span>
+                    <ArrowDownTrayIcon className="w-5 h-5 text-gray-500 " />
+                    <span className="text-sm text-gray-600 ">{file.downloads} downloads</span>
                   </div>
                   <div className="flex items-center gap-1">
                     {[...Array(5)].map((_, i) => (
@@ -223,7 +223,7 @@ const Browse = () => {
                         className={`w-4 h-4 ${i < Math.floor(file.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
                       />
                     ))}
-                    <span className="text-sm text-gray-600 ml-1">{file.rating}</span>
+                    <span className="text-sm text-gray-600  ml-1">{file.rating}</span>
                   </div>
                 </div>
                 <button
@@ -236,8 +236,8 @@ const Browse = () => {
             </div>
           ))
         ) : (
-          <div className="bg-gray-50 rounded-lg p-12 text-center">
-            <p className="text-gray-600 text-lg">No files found matching your criteria</p>
+          <div className="bg-gray-50  rounded-lg p-12 text-center">
+            <p className="text-gray-600  text-lg">No files found matching your criteria</p>
           </div>
         )}
       </div>

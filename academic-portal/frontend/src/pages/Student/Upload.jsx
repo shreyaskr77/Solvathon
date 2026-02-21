@@ -80,14 +80,14 @@ const StudentUpload = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">📚 Upload Notes</h1>
-        <p className="text-gray-600">Share your study materials with other students</p>
+        <h1 className="text-3xl font-bold text-gray-900  mb-2">📚 Upload Notes</h1>
+        <p className="text-gray-600 ">Share your study materials with other students</p>
       </div>
 
-      <div className="bg-white rounded-lg shadow-md p-6">
+      <div className="bg-white  rounded-lg shadow-md p-6">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
+            <label className="block text-sm font-semibold text-gray-700  mb-2">
               Content Title *
             </label>
             <input
@@ -96,22 +96,22 @@ const StudentUpload = () => {
               value={formData.title}
               onChange={handleInputChange}
               placeholder="e.g., Chapter 1-3 Notes, Assignment Solution"
-              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full border border-gray-300  rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
             />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-gray-700  mb-2">
                 Subjects (Select one or more) *
               </label>
-              <div className="w-full border border-gray-300 rounded-lg p-2 max-h-40 overflow-y-auto space-y-2 bg-white">
+              <div className="w-full border border-gray-300  rounded-lg p-2 max-h-40 overflow-y-auto space-y-2 bg-white ">
                 {subjects.length === 0 ? (
-                  <p className="text-sm text-gray-500 p-2">Loading subjects...</p>
+                  <p className="text-sm text-gray-500  p-2">Loading subjects...</p>
                 ) : (
                   subjects.map((subj) => (
-                    <label key={subj._id} className="flex items-center space-x-2 p-1 hover:bg-gray-50 rounded cursor-pointer">
+                    <label key={subj._id} className="flex items-center space-x-2 p-1 hover:bg-gray-50  rounded cursor-pointer">
                       <input
                         type="checkbox"
                         value={subj._id}
@@ -125,9 +125,9 @@ const StudentUpload = () => {
                             return { ...prev, subjectIds: newIds };
                           });
                         }}
-                        className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 w-4 h-4"
+                        className="rounded border-gray-300  text-indigo-600 focus:ring-indigo-500 w-4 h-4"
                       />
-                      <span className="text-gray-700 text-sm">
+                      <span className="text-gray-700  text-sm">
                         {subj.subjectName || subj.subjectCode}
                       </span>
                     </label>
@@ -137,14 +137,14 @@ const StudentUpload = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-gray-700  mb-2">
                 Content Type
               </label>
               <select
                 name="fileType"
                 value={formData.fileType}
                 onChange={handleInputChange}
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full border border-gray-300  rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               >
                 {fileTypes.map((type) => (
                   <option key={type} value={type}>{type}</option>
@@ -154,7 +154,7 @@ const StudentUpload = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
+            <label className="block text-sm font-semibold text-gray-700  mb-2">
               Description
             </label>
             <textarea
@@ -163,15 +163,15 @@ const StudentUpload = () => {
               onChange={handleInputChange}
               placeholder="Describe the content, topics covered, etc."
               rows="4"
-              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
+              className="w-full border border-gray-300  rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
+            <label className="block text-sm font-semibold text-gray-700  mb-2">
               Upload File (PDF, DOC, DOCX, images) *
             </label>
-            <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-indigo-500 transition cursor-pointer">
+            <div className="border-2 border-dashed border-gray-300  rounded-lg p-8 text-center hover:border-indigo-500 transition cursor-pointer">
               <input
                 type="file"
                 onChange={handleFileChange}
@@ -181,10 +181,10 @@ const StudentUpload = () => {
               />
               <label htmlFor="fileInput" className="cursor-pointer block">
                 <CloudArrowUpIcon className="w-12 h-12 mx-auto text-gray-400 mb-2" />
-                <p className="text-gray-900 font-semibold">
+                <p className="text-gray-900  font-semibold">
                   {file ? file.name : 'Click to upload or drag and drop'}
                 </p>
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-500  text-sm">
                   PDF, DOC, DOCX, PPTX (Max 10MB)
                 </p>
               </label>

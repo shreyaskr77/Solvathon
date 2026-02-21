@@ -25,11 +25,11 @@ const Dashboard = () => {
         {stats.map((stat, index) => {
           const Icon = stat.icon;
           return (
-            <div key={index} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
+            <div key={index} className="bg-white  rounded-lg shadow-md p-6 hover:shadow-lg transition">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-gray-600 text-sm font-medium">{stat.label}</p>
-                  <p className="text-3xl font-bold text-gray-900 mt-2">{stat.value}</p>
+                  <p className="text-gray-600  text-sm font-medium">{stat.label}</p>
+                  <p className="text-3xl font-bold text-gray-900  mt-2">{stat.value}</p>
                 </div>
                 <div className={`${stat.color} p-3 rounded-lg text-white`}>
                   <Icon className="w-6 h-6" />
@@ -41,8 +41,8 @@ const Dashboard = () => {
       </div>
 
       {/* Quick Actions */}
-      <div className="bg-white rounded-lg shadow-md p-6">
-        <h2 className="text-xl font-bold text-gray-900 mb-4">Quick Actions</h2>
+      <div className="bg-white  rounded-lg shadow-md p-6">
+        <h2 className="text-xl font-bold text-gray-900  mb-4">Quick Actions</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <button className="bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-lg font-semibold transition">
             📤 Upload Files
@@ -57,8 +57,8 @@ const Dashboard = () => {
       </div>
 
       {/* Recent Activity */}
-      <div className="bg-white rounded-lg shadow-md p-6">
-        <h2 className="text-xl font-bold text-gray-900 mb-4">Recent Activity</h2>
+      <div className="bg-white  rounded-lg shadow-md p-6">
+        <h2 className="text-xl font-bold text-gray-900  mb-4">Recent Activity</h2>
         <div className="space-y-3">
           {[1, 2, 3].map((item) => (
             <div key={item} className="flex items-start gap-4 pb-3 border-b last:border-0">
@@ -66,8 +66,8 @@ const Dashboard = () => {
                 {item}
               </div>
               <div>
-                <p className="font-medium text-gray-900">File approved and published</p>
-                <p className="text-sm text-gray-500">2 hours ago</p>
+                <p className="font-medium text-gray-900 ">File approved and published</p>
+                <p className="text-sm text-gray-500 ">2 hours ago</p>
               </div>
             </div>
           ))}

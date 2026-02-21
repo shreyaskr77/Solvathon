@@ -229,7 +229,7 @@ const Register = () => {
           </form>
 
           {/* Login Link */}
-          <div className="mt-6 pt-6 border-t border-gray-200">
+          <div className="mt-6 pt-6 border-t border-gray-200 ">
             <p className="text-center text-sm text-apple-gray">
               Already have an account?{" "}
               <Link to="/login" className="text-system-blue font-semibold hover:text-system-blue-hover transition-colors">

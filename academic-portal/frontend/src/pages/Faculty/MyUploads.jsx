@@ -31,41 +31,41 @@ const MyUploads = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-gray-900 mb-2"> My Uploads</h1>
-        <p className="text-gray-600">Manage your uploaded content</p>
+        <h1 className="text-3xl font-bold text-gray-900  mb-2"> My Uploads</h1>
+        <p className="text-gray-600 ">Manage your uploaded content</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <p className="text-gray-600 text-sm">Total Uploads</p>
+        <div className="bg-white  rounded-lg shadow-md p-6">
+          <p className="text-gray-600  text-sm">Total Uploads</p>
           <p className="text-3xl font-bold text-indigo-600 mt-2">{uploads.length}</p>
         </div>
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <p className="text-gray-600 text-sm">Approved</p>
+        <div className="bg-white  rounded-lg shadow-md p-6">
+          <p className="text-gray-600  text-sm">Approved</p>
           <p className="text-3xl font-bold text-blue-600 mt-2">{uploads.filter(u => u.status === 'Approved').length}</p>
         </div>
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <p className="text-gray-600 text-sm">Pending</p>
+        <div className="bg-white  rounded-lg shadow-md p-6">
+          <p className="text-gray-600  text-sm">Pending</p>
           <p className="text-3xl font-bold text-yellow-600 mt-2">{uploads.filter(u => u.status === 'Pending').length}</p>
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="bg-white  rounded-lg shadow-md overflow-hidden">
         <table className="w-full">
-          <thead className="bg-gray-100 border-b">
+          <thead className="bg-gray-100  border-b">
             <tr>
-              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Title</th>
-              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Subject</th>
-              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Type</th>
-              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Status</th>
-              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Actions</th>
+              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700 ">Title</th>
+              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700 ">Subject</th>
+              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700 ">Type</th>
+              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700 ">Status</th>
+              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700 ">Actions</th>
             </tr>
           </thead>
           <tbody>
             {uploads.map((upload) => (
-              <tr key={upload.id} className="border-b hover:bg-gray-50 transition">
-                <td className="px-6 py-4 font-medium text-gray-900">{upload.title}</td>
-                <td className="px-6 py-4 text-gray-600">{upload.subject}</td>
+              <tr key={upload.id} className="border-b hover:bg-gray-50  transition">
+                <td className="px-6 py-4 font-medium text-gray-900 ">{upload.title}</td>
+                <td className="px-6 py-4 text-gray-600 ">{upload.subject}</td>
                 <td className="px-6 py-4">
                   <span className="px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800">{upload.type}</span>
                 </td>
@@ -92,8 +92,8 @@ const MyUploads = () => {
       </div>
 
       {uploads.length === 0 && (
-        <div className="bg-gray-50 rounded-lg p-12 text-center">
-          <p className="text-gray-600 text-lg">No uploads yet. Start sharing your content!</p>
+        <div className="bg-gray-50  rounded-lg p-12 text-center">
+          <p className="text-gray-600  text-lg">No uploads yet. Start sharing your content!</p>
         </div>
       )}
     </div>
